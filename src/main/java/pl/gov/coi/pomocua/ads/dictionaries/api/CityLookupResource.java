@@ -24,7 +24,7 @@ public class CityLookupResource {
 
     @GetMapping
     public ResponseEntity<CityLookupResponse> getCities(@RequestParam String query) {
-        if (!StringUtils.hasText(query) || query.length() < 2) {
+        if (!StringUtils.hasText(query) || query.length() <= 2) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
